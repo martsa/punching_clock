@@ -18,7 +18,7 @@ public class KundenController {
     public KundenController(KundenService kundenService){this.kundenService = kundenService;}
 
     /**
-     * Gibt eine Liste aller Category Datensätze zurück
+     * Get a list of all kunden data back
      * @return List<Category>
      */
     @GetMapping
@@ -27,10 +27,9 @@ public class KundenController {
         return kundenService.findAll();
     }
 
-    /**
-     * Erzeugt einen neuen category Datensatz
+    /** create a new kunden data
      * @param
-     * @return category
+     * @return kunden
      */
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -38,7 +37,7 @@ public class KundenController {
     }
 
     /**
-     * Löscht einen bestehenden category Datensatz anhand der ID
+     * Delete current kunden data with reference to id
      * @param id
      */
     @DeleteMapping("{id}")
@@ -46,9 +45,9 @@ public class KundenController {
     public void deleteCategory(@PathVariable("id") Long id){ kundenService.deleteCategory(id);}
 
     /**
-     * Aktualisiert einen bestehenden category Datensatz
+     * Update current kunden data
      * @param
-     * @return category
+     * @return kunden
      */
     @PutMapping
     @ResponseStatus(HttpStatus.OK)

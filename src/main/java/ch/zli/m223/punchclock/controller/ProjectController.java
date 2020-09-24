@@ -20,7 +20,7 @@ public class ProjectController {
     }
 
     /**
-     * Gibt eine Liste mit allen Projekten zurück
+     * Give a list with all project back
      * @return List<Project>
      */
     @GetMapping
@@ -30,7 +30,7 @@ public class ProjectController {
     }
 
     /**
-     * Erstellt einen neuen Projekt Datensatz
+     * create a new project data
      * @param project
      **/
     @PostMapping
@@ -40,7 +40,7 @@ public class ProjectController {
     }
 
     /**
-     * Löscht ein Projekt Datensatz über die Projekt ID
+     * Delete project data with referenc to id
      * @param id
      */
     @DeleteMapping("{id}")
@@ -50,7 +50,7 @@ public class ProjectController {
     }
 
     /**
-     * Aktualisiert einen Projekt Datensatz
+     * Update project data
      * @param project
      * @return
      */
