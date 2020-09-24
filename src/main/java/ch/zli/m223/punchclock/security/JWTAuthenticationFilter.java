@@ -1,8 +1,12 @@
-package ch.zli.m223.punchclock.filter;
+package ch.zli.m223.punchclock.security;
+
+
+import com.auth0.jwt.JWT;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import ch.zli.m223.punchclock.domain.ApplicationUser;
-import com.auth0.jwt.JWT;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -18,8 +22,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static ch.zli.m223.punchclock.config.SecurityConstants.*;
 import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
+import static ch.zli.m223.punchclock.security.SecurityConstants.EXPIRATION_TIME;
+import static ch.zli.m223.punchclock.security.SecurityConstants.HEADER_STRING;
+import static ch.zli.m223.punchclock.security.SecurityConstants.SECRET;
+import static ch.zli.m223.punchclock.security.SecurityConstants.TOKEN_PREFIX;
+
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
