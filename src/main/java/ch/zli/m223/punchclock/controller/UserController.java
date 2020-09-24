@@ -27,7 +27,7 @@ public class UserController {
     }
 
     /**
-     * Registriert ein neuen Benutzerkonto
+     * Register a neu user
      * @param user
      */
 
@@ -38,7 +38,7 @@ public class UserController {
     }
 
     /**
-     * Löscht einen bestehenden User Datensatz anhand der ID
+     * Delete the current user data in reference to ID
      * @param id
      */
     @DeleteMapping("{id}")
@@ -46,7 +46,8 @@ public class UserController {
     public void deleteEntry(@PathVariable("id") Long id){ applicationUserRepository.deleteById(id);}
 
     /**
-     * Aktualisiert einen bestehenden Benutzer Datensatz
+     * Update the current user data
+
      * @param applicationUser
      * @return applicationUser
      */

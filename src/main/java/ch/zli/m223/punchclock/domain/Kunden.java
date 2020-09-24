@@ -1,8 +1,6 @@
 package ch.zli.m223.punchclock.domain;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
@@ -16,7 +14,6 @@ public class Kunden {
     @NotNull
     private String name;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "kunden")
     private Set<Entry> entries;
 
@@ -36,11 +33,9 @@ public class Kunden {
         this.name = name;
     }
 
-    @JsonIgnore
     public Set<Entry> getEntry() {
         return entries;
     }
-    @JsonIgnore
     public void setEntry(Set<Entry> entries) {
         this.entries = entries;
     }
