@@ -2,6 +2,7 @@ package ch.zli.m223.punchclock.security;
 
 import ch.zli.m223.punchclock.domain.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,6 +16,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import static ch.zli.m223.punchclock.security.SecurityConstants.SIGN_UP_URL;
 
+@Configuration
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
     private UserDetailsServiceImpl userDetailsService;
@@ -30,7 +32,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable().headers().frameOptions().disable().and().authorizeRequests()
                 .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()
                 .antMatchers(HttpMethod.GET,"/**/*.js","**/*.html","**/*.css").permitAll()
-                .antMatchers(HttpMethod.GET,"/h2-console/**").permitAll()
+                .antMatchers("/h2-console/**").permitAll()
 
                 .anyRequest().authenticated()
                 .and()
