@@ -45,12 +45,7 @@ public class Kunden {
         this.entries = entries;
     }
 
-    @Override
-    public String toString() {
-        String result = String.format("Kunden[id=%d,name='%s']%n", id, name);
 
 
-        return result;
-    }
 }
 

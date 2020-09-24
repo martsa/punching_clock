@@ -61,9 +61,9 @@ public class Entry {
         this.checkOut = checkOut;
     }
 
-    public void setKunden(Kunden kunden) { this.kunden = kunden; }
+    public void setName(Kunden kunden) { this.kunden = kunden; }
 
-    public Kunden getKunden() { return kunden; }
+    public Kunden getName() { return kunden; }
 
     public Project getProject() { return project; }
 
