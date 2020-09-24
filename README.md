@@ -12,10 +12,11 @@ Folgende Dienste stehen während der Ausführung im Profil `dev` zur Verfügung:
 - REST-Schnittstelle der Applikation: http://localhost:8081
 - Dashboard der H2 Datenbank: http://localhost:8081/h2-console
 
-
+/******************************************************************************************/
 Unfortunately I am not able to bring fully Ui supported for now 
 
-but feature like registraion and login works and I have mostly worked on Rest interfaces and things works well on rest interface.
+but feature like registraion and login works and I have mostly worked on Rest interfaces and 
+everthings works well on rest interface for all controller.
 
 
 All functions are commented in the respective controllers for the paths
@@ -27,3 +28,4 @@ All functions are commented in the respective controllers for the paths
 / project
 
 / users
+/***************************************************************************************/
