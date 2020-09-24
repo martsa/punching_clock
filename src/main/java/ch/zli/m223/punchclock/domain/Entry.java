@@ -15,6 +15,18 @@ public class Entry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "kunden_id", referencedColumnName = "id")
+    private Kunden kunden;
+
+    @ManyToOne
+    @JoinColumn(name = "project_id", referencedColumnName = "id")
+    private Project project;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private ApplicationUser applicationUser;
+
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @Column(nullable = false)
@@ -48,4 +60,22 @@ public class Entry {
     public void setCheckOut(LocalDateTime checkOut) {
         this.checkOut = checkOut;
     }
+
+    public void setKunden(Kunden kunden) { this.kunden = kunden; }
+
+    public Kunden getKunden() { return kunden; }
+
+    public Project getProject() { return project; }
+
+    public void setProject(Project project) {this.project = project;}
+
+    public ApplicationUser getApplicationUser() {
+        return applicationUser;
+    }
+
+    public void setApplicationUser(ApplicationUser applicationUser) {
+        this.applicationUser = applicationUser;
+    }
+
+
 }
