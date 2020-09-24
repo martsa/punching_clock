@@ -7,7 +7,6 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-
 @Entity
 public class Entry {
 
